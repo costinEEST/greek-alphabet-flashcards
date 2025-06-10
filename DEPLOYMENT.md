@@ -13,7 +13,7 @@ The repository includes a GitHub Actions workflow that automatically builds and 
    git add .
    git commit -m "Initial commit"
    git branch -M main
-   git remote add origin https://github.com/yourusername/your-repo-name.git
+   git remote add origin git@github.com:costinEEST/greek-alphabet-flashcards.git
    git push -u origin main
    ```
 
@@ -24,7 +24,7 @@ The repository includes a GitHub Actions workflow that automatically builds and 
    - The workflow will automatically run on the next push
 
 3. **Access your app**:
-   - Your app will be available at: `https://yourusername.github.io/your-repo-name/`
+   - Your app will be available at: `https://costinEEST.github.io/greek-alphabet-flashcards/`
    - The URL will be shown in the Pages settings after deployment
 
 ### How It Works
@@ -67,7 +67,7 @@ If you prefer manual deployment, you can use the `gh-pages` package:
 The app automatically configures the correct base path for GitHub Pages:
 
 - **Development**: Serves from root (`/`)
-- **GitHub Pages**: Serves from subdirectory (`/repo-name/`)
+- **GitHub Pages**: Serves from subdirectory (`/greek-alphabet-flashcards/`)
 
 This is handled by the `GITHUB_PAGES` environment variable in the workflow.
 

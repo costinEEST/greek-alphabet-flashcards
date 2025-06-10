@@ -33,7 +33,7 @@ A modern Progressive Web App (PWA) for learning the Greek alphabet with interact
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone git@github.com:costinEEST/greek-alphabet-flashcards.git
 cd greek-alphabet-flashcards
 
 # Install dependencies
@@ -115,7 +115,7 @@ For GitHub Pages, the repository includes automatic deployment:
 2. Enable GitHub Pages in repository settings (Source: GitHub Actions)
 3. The app deploys automatically on every push to main branch
 
-See `DEPLOYMENT.md` for detailed GitHub Pages setup instructions and troubleshooting.
+See [`DEPLOYMENT.md`](./DEPLOYMENT.md) for detailed GitHub Pages setup instructions and troubleshooting.
 
 ## Project Structure
 
@@ -158,7 +158,7 @@ This project includes automated deployment configuration for various hosting pla
 - **Static Hosting**: Manual upload of `dist/` folder contents
 - **Custom Servers**: Copy built files to web server directory
 
-For comprehensive deployment instructions including GitHub Pages setup, manual deployment options, troubleshooting, and platform-specific configurations, see **`DEPLOYMENT.md`**.
+For comprehensive deployment instructions including GitHub Pages setup, manual deployment options, troubleshooting, and platform-specific configurations, see [**`DEPLOYMENT.md`**](./DEPLOYMENT.md).
 
 ## PWA Features
 
@@ -199,7 +199,7 @@ Changes to HTML, CSS, and JavaScript automatically refresh the browser during de
 The development server is accessible on your local network. Check the console output for the network URL to test on mobile devices.
 
 ### Asset Generation
-Icons and favicons are generated programmatically. Modify the scripts in the `scripts/` folder to customize the design.
+Icons and favicons are generated programmatically. Modify the scripts in the [`scripts/`](./scripts/) folder to customize the design.
 
 ### PWA Testing
 Use Chrome DevTools → Application → Service Workers to test offline functionality and cache management.
