@@ -1,0 +1,394 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #4CAF50;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    width: 4.17%; /* 1/24 * 100% */
+}
+
+.progress-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+}
+
+/* Main content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Flashcard */
+.flashcard-container {
+    perspective: 1000px;
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+}
+
+.flashcard {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    cursor: pointer;
+}
+
+.flashcard.flipped {
+    transform: rotateY(180deg);
+}
+
+.flashcard-front,
+.flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+}
+
+.flashcard-front {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid #e9ecef;
+}
+
+.flashcard-back {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* Letter display */
+.letter-display {
+    margin-bottom: 20px;
+}
+
+.letter-uppercase {
+    font-family: 'Noto Sans Greek', 'Noto Sans', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.letter-lowercase {
+    font-family: 'Noto Sans Greek', 'Noto Sans', serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #34495e;
+    line-height: 1;
+}
+
+/* Transliteration display */
+.transliteration-display {
+    text-align: center;
+}
+
+.transliteration {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.pronunciation {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+}
+
+.romanization {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Card hints */
+.card-hint {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-top: auto;
+    opacity: 0.7;
+}
+
+.flashcard-back .card-hint {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.control-btn {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    color: #667eea;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.control-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    background: #f8f9fa;
+}
+
+.control-btn:active {
+    transform: translateY(0);
+}
+
+.control-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.flip-btn {
+    background: #4CAF50;
+    color: white;
+    width: 70px;
+    height: 70px;
+}
+
+.flip-btn:hover {
+    background: #45a049;
+}
+
+/* Action buttons */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.action-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Footer */
+.footer {
+    margin-top: 40px;
+    text-align: center;
+    color: white;
+}
+
+.instructions h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.instructions ul {
+    list-style: none;
+    display: inline-block;
+    text-align: left;
+}
+
+.instructions li {
+    margin-bottom: 5px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .flashcard-container {
+        max-width: 350px;
+        height: 280px;
+    }
+    
+    .letter-uppercase {
+        font-size: 3.5rem;
+    }
+    
+    .letter-lowercase {
+        font-size: 2.5rem;
+    }
+    
+    .transliteration {
+        font-size: 2rem;
+    }
+    
+    .controls {
+        gap: 15px;
+    }
+    
+    .control-btn {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .flip-btn {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .progress-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .progress-bar {
+        width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .flashcard-container {
+        max-width: 300px;
+        height: 250px;
+    }
+    
+    .letter-uppercase {
+        font-size: 3rem;
+    }
+    
+    .letter-lowercase {
+        font-size: 2rem;
+    }
+    
+    .transliteration {
+        font-size: 1.8rem;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .instructions ul {
+        text-align: center;
+    }
+}
+
+/* Animation for card transitions */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.flashcard-container {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Focus styles for accessibility */
+.control-btn:focus,
+.action-btn:focus,
+.flashcard:focus {
+    outline: 2px solid #4CAF50;
+    outline-offset: 2px;
+}
