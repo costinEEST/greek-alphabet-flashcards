@@ -3,17 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn the Greek alphabet with interactive flashcards and pronunciation. Works offline as a Progressive Web App.">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Greek Cards">
+    
     <title>Greek Alphabet Flashcards</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Icons for different platforms -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png">
+    <link rel="apple-touch-icon" href="/icon-192.png">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <!-- Font for better Greek letter display -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600;700&family=Noto+Sans+Greek:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <header class="header">
+        <header class="header" role="banner">
             <h1>Greek Alphabet Flashcards</h1>
             <div class="progress-container">
-                <div class="progress-bar">
+                <div class="progress-bar" role="progressbar" aria-label="Learning progress" aria-valuenow="1" aria-valuemin="1" aria-valuemax="24">
                     <div class="progress-fill" id="progressFill"></div>
                 </div>
                 <div class="progress-text">
@@ -22,36 +38,36 @@
             </div>
         </header>
 
-        <main class="main-content">
+        <main class="main-content" role="main">
             <div class="flashcard-container">
-                <div class="flashcard" id="flashcard">
+                <div class="flashcard" id="flashcard" tabindex="0" role="button" aria-label="Flashcard showing Greek letter. Press space to flip" aria-live="polite">
                     <div class="flashcard-front" id="flashcardFront">
                         <div class="letter-display">
-                            <div class="letter-uppercase" id="letterUppercase">Α</div>
-                            <div class="letter-lowercase" id="letterLowercase">α</div>
+                            <div class="letter-uppercase" id="letterUppercase" aria-label="Uppercase Greek letter">Α</div>
+                            <div class="letter-lowercase" id="letterLowercase" aria-label="Lowercase Greek letter">α</div>
                         </div>
                         <div class="card-hint">Click to reveal transliteration</div>
                     </div>
                     <div class="flashcard-back" id="flashcardBack">
                         <div class="transliteration-display">
-                            <div class="transliteration" id="transliteration">Alpha</div>
-                            <div class="pronunciation" id="pronunciation">/ˈælfə/</div>
-                            <div class="romanization" id="romanization">A, a</div>
+                            <div class="transliteration" id="transliteration" aria-label="Letter name">Alpha</div>
+                            <div class="pronunciation" id="pronunciation" aria-label="Pronunciation">/ˈælfə/</div>
+                            <div class="romanization" id="romanization" aria-label="Romanization">A, a</div>
                         </div>
                         <div class="card-hint">Click to flip back</div>
                     </div>
                 </div>
             </div>
 
-            <div class="controls">
-                <button class="control-btn" id="prevBtn" title="Previous card (Left arrow)">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <div class="controls" role="group" aria-label="Flashcard navigation controls">
+                <button class="control-btn" id="prevBtn" title="Previous card (Left arrow)" aria-label="Go to previous card">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <polyline points="15,18 9,12 15,6"></polyline>
                     </svg>
                 </button>
                 
-                <button class="control-btn flip-btn" id="flipBtn" title="Flip card (Spacebar)">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <button class="control-btn flip-btn" id="flipBtn" title="Flip card (Spacebar)" aria-label="Flip flashcard to see answer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path>
                         <path d="M21 3v5h-5"></path>
                         <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path>
@@ -59,16 +75,16 @@
                     </svg>
                 </button>
                 
-                <button class="control-btn" id="nextBtn" title="Next card (Right arrow)">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <button class="control-btn" id="nextBtn" title="Next card (Right arrow)" aria-label="Go to next card">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <polyline points="9,18 15,12 9,6"></polyline>
                     </svg>
                 </button>
             </div>
 
-            <div class="action-buttons">
-                <button class="action-btn" id="shuffleBtn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <div class="action-buttons" role="group" aria-label="Card order controls">
+                <button class="action-btn" id="shuffleBtn" aria-label="Shuffle cards for random practice">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <polyline points="16,3 21,3 21,8"></polyline>
                         <line x1="4" y1="20" x2="21" y2="3"></line>
                         <polyline points="21,16 21,21 16,21"></polyline>
@@ -78,8 +94,8 @@
                     Shuffle
                 </button>
                 
-                <button class="action-btn" id="resetBtn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <button class="action-btn" id="resetBtn" aria-label="Reset to alphabetical order">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <polyline points="23,4 23,10 17,10"></polyline>
                         <path d="M20.49,15a9,9,0,1,1-2.12-9.36L23,10"></path>
                     </svg>
