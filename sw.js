@@ -8,6 +8,9 @@ const urlsToCache = [
   '/manifest.json',
   '/icon-192.png',
   '/icon-512.png',
+  '/favicon.svg',
+  '/favicon.ico',
+  '/favicon-16.svg',
   'https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600;700&family=Noto+Sans+Greek:wght@300;400;600;700&display=swap'
 ];
 
