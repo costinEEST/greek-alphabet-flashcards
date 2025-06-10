@@ -511,7 +511,89 @@ body {
 /* Focus styles for accessibility */
 .control-btn:focus,
 .action-btn:focus,
-.flashcard:focus {
+.flashcard:focus,
+.letter-item:focus {
     outline: 2px solid #4CAF50;
     outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .flashcard-front {
+        background: white;
+        border: 3px solid black;
+        color: black;
+    }
+    
+    .flashcard-back {
+        background: black;
+        border: 3px solid white;
+        color: white;
+    }
+    
+    .control-btn, .action-btn {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .flashcard {
+        transition: none;
+    }
+    
+    .letter-item.speaking {
+        animation: none;
+        background: rgba(76, 175, 80, 0.3);
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #2c3e50 0%, #4a6741 100%);
+    }
+    
+    .flashcard-front {
+        background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+        border-color: #5a6c7d;
+        color: white;
+    }
+    
+    .letter-uppercase, .letter-lowercase {
+        color: white;
+    }
+    
+    .card-hint {
+        color: #bdc3c7;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .controls, .action-buttons, .pronunciation-section {
+        display: none;
+    }
+    
+    .flashcard {
+        background: white;
+        border: 2px solid black;
+        box-shadow: none;
+    }
+    
+    .flashcard-back {
+        display: block;
+        transform: none;
+    }
 }

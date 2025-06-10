@@ -292,6 +292,16 @@ function updateCard() {
     pronunciation.textContent = currentLetter.pronunciation;
     romanization.textContent = currentLetter.romanization;
     
+    // Update accessibility labels
+    letterUppercase.setAttribute('aria-label', `Uppercase ${currentLetter.name}: ${currentLetter.uppercase}`);
+    letterLowercase.setAttribute('aria-label', `Lowercase ${currentLetter.name}: ${currentLetter.lowercase}`);
+    transliteration.setAttribute('aria-label', `Letter name: ${currentLetter.name}`);
+    pronunciation.setAttribute('aria-label', `Pronunciation: ${currentLetter.pronunciation}`);
+    romanization.setAttribute('aria-label', `Romanization: ${currentLetter.romanization}`);
+    
+    // Update flashcard aria-label
+    flashcard.setAttribute('aria-label', `Flashcard showing ${currentLetter.name}. Press space to flip`);
+    
     // Reset flip state
     if (isFlipped) {
         flashcard.classList.remove('flipped');
@@ -301,6 +311,10 @@ function updateCard() {
     // Update navigation buttons
     prevBtn.disabled = currentCardIndex === 0;
     nextBtn.disabled = currentCardIndex === cardOrder.length - 1;
+    
+    // Update button accessibility
+    prevBtn.setAttribute('aria-label', currentCardIndex === 0 ? 'Go to previous card (disabled)' : 'Go to previous card');
+    nextBtn.setAttribute('aria-label', currentCardIndex === cardOrder.length - 1 ? 'Go to next card (disabled)' : 'Go to next card');
     
     // Trigger slide-in animation
     flashcard.style.animation = 'none';
@@ -313,6 +327,11 @@ function updateProgress() {
     const progress = ((currentCardIndex + 1) / cardOrder.length) * 100;
     progressFill.style.width = `${progress}%`;
     currentCard.textContent = currentCardIndex + 1;
+    
+    // Update accessibility attributes
+    const progressBar = document.querySelector('.progress-bar');
+    progressBar.setAttribute('aria-valuenow', currentCardIndex + 1);
+    progressBar.setAttribute('aria-valuetext', `Card ${currentCardIndex + 1} of ${cardOrder.length}`);
 }
 
 // Flip the current card
@@ -629,10 +648,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1000);
 });
 
-// Add service worker registration for potential offline use
+// Register service worker for PWA functionality
 if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        // Service worker could be registered here for offline functionality
+    window.addEventListener('load', async () => {
+        try {
+            const registration = await navigator.serviceWorker.register('/sw.js');
+            console.log('Service Worker registered successfully:', registration.scope);
+            
+            // Check for updates
+            registration.addEventListener('updatefound', () => {
+                const newWorker = registration.installing;
+                newWorker.addEventListener('statechange', () => {
+                    if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                        showNotification('App updated! Refresh to see changes.');
+                    }
+                });
+            });
+        } catch (error) {
+            console.log('Service Worker registration failed:', error);
+        }
+        
         console.log('Greek Alphabet Flashcards loaded successfully!');
     });
 }
+
+// PWA Install prompt
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    
+    // Show install button or notification
+    setTimeout(() => {
+        showNotification('Install this app for offline access!');
+    }, 5000);
+});
+
+// Handle successful PWA installation
+window.addEventListener('appinstalled', () => {
+    showNotification('App installed successfully!');
+    deferredPrompt = null;
+});
