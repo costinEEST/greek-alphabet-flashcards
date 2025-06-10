@@ -261,6 +261,108 @@ body {
     transform: translateY(-1px);
 }
 
+/* Pronunciation Section */
+.pronunciation-section {
+    margin: 40px 0;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    color: white;
+    text-align: center;
+}
+
+.pronunciation-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 600;
+}
+
+.pronunciation-hint {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.alphabet-table {
+    display: flex;
+    justify-content: center;
+}
+
+.alphabet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 12px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.letter-item {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 15px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.letter-item:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.letter-item:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.letter-item.speaking {
+    background: rgba(76, 175, 80, 0.3);
+    border-color: #4CAF50;
+    animation: pulse 1s ease-in-out infinite;
+}
+
+.letter-item-upper {
+    font-family: 'Noto Sans Greek', 'Noto Sans', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.letter-item-lower {
+    font-family: 'Noto Sans Greek', 'Noto Sans', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.letter-item-name {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+    }
+}
+
 /* Footer */
 .footer {
     margin-top: 40px;
@@ -366,6 +468,27 @@ body {
     
     .instructions ul {
         text-align: center;
+    }
+    
+    .alphabet-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+    
+    .letter-item {
+        padding: 10px 8px;
+    }
+    
+    .letter-item-upper {
+        font-size: 1.4rem;
+    }
+    
+    .letter-item-lower {
+        font-size: 1.1rem;
+    }
+    
+    .letter-item-name {
+        font-size: 0.7rem;
     }
 }
 

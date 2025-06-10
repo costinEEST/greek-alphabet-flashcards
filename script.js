@@ -5,168 +5,192 @@ const greekAlphabet = [
         lowercase: 'α',
         name: 'Alpha',
         pronunciation: '/ˈælfə/',
-        romanization: 'A, a'
+        romanization: 'A, a',
+        greekPronunciation: 'άλφα'
     },
     {
         uppercase: 'Β',
         lowercase: 'β',
         name: 'Beta',
         pronunciation: '/ˈbeɪtə/',
-        romanization: 'B, b'
+        romanization: 'B, b',
+        greekPronunciation: 'βήτα'
     },
     {
         uppercase: 'Γ',
         lowercase: 'γ',
         name: 'Gamma',
         pronunciation: '/ˈɡæmə/',
-        romanization: 'G, g'
+        romanization: 'G, g',
+        greekPronunciation: 'γάμμα'
     },
     {
         uppercase: 'Δ',
         lowercase: 'δ',
         name: 'Delta',
         pronunciation: '/ˈdɛltə/',
-        romanization: 'D, d'
+        romanization: 'D, d',
+        greekPronunciation: 'δέλτα'
     },
     {
         uppercase: 'Ε',
         lowercase: 'ε',
         name: 'Epsilon',
         pronunciation: '/ˈɛpsɪlɒn/',
-        romanization: 'E, e'
+        romanization: 'E, e',
+        greekPronunciation: 'έψιλον'
     },
     {
         uppercase: 'Ζ',
         lowercase: 'ζ',
         name: 'Zeta',
         pronunciation: '/ˈzeɪtə/',
-        romanization: 'Z, z'
+        romanization: 'Z, z',
+        greekPronunciation: 'ζήτα'
     },
     {
         uppercase: 'Η',
         lowercase: 'η',
         name: 'Eta',
         pronunciation: '/ˈeɪtə/',
-        romanization: 'H, h'
+        romanization: 'H, h',
+        greekPronunciation: 'ήτα'
     },
     {
         uppercase: 'Θ',
         lowercase: 'θ',
         name: 'Theta',
         pronunciation: '/ˈθeɪtə/',
-        romanization: 'Th, th'
+        romanization: 'Th, th',
+        greekPronunciation: 'θήτα'
     },
     {
         uppercase: 'Ι',
         lowercase: 'ι',
         name: 'Iota',
         pronunciation: '/aɪˈoʊtə/',
-        romanization: 'I, i'
+        romanization: 'I, i',
+        greekPronunciation: 'ιώτα'
     },
     {
         uppercase: 'Κ',
         lowercase: 'κ',
         name: 'Kappa',
         pronunciation: '/ˈkæpə/',
-        romanization: 'K, k'
+        romanization: 'K, k',
+        greekPronunciation: 'κάππα'
     },
     {
         uppercase: 'Λ',
         lowercase: 'λ',
         name: 'Lambda',
         pronunciation: '/ˈlæmdə/',
-        romanization: 'L, l'
+        romanization: 'L, l',
+        greekPronunciation: 'λάμδα'
     },
     {
         uppercase: 'Μ',
         lowercase: 'μ',
         name: 'Mu',
         pronunciation: '/mjuː/',
-        romanization: 'M, m'
+        romanization: 'M, m',
+        greekPronunciation: 'μι'
     },
     {
         uppercase: 'Ν',
         lowercase: 'ν',
         name: 'Nu',
         pronunciation: '/nuː/',
-        romanization: 'N, n'
+        romanization: 'N, n',
+        greekPronunciation: 'νι'
     },
     {
         uppercase: 'Ξ',
         lowercase: 'ξ',
         name: 'Xi',
         pronunciation: '/zaɪ/',
-        romanization: 'X, x'
+        romanization: 'X, x',
+        greekPronunciation: 'ξι'
     },
     {
         uppercase: 'Ο',
         lowercase: 'ο',
         name: 'Omicron',
         pronunciation: '/ˈoʊmɪkrɒn/',
-        romanization: 'O, o'
+        romanization: 'O, o',
+        greekPronunciation: 'όμικρον'
     },
     {
         uppercase: 'Π',
         lowercase: 'π',
         name: 'Pi',
         pronunciation: '/paɪ/',
-        romanization: 'P, p'
+        romanization: 'P, p',
+        greekPronunciation: 'πι'
     },
     {
         uppercase: 'Ρ',
         lowercase: 'ρ',
         name: 'Rho',
         pronunciation: '/roʊ/',
-        romanization: 'R, r'
+        romanization: 'R, r',
+        greekPronunciation: 'ρο'
     },
     {
         uppercase: 'Σ',
         lowercase: 'σ/ς',
         name: 'Sigma',
         pronunciation: '/ˈsɪɡmə/',
-        romanization: 'S, s'
+        romanization: 'S, s',
+        greekPronunciation: 'σίγμα'
     },
     {
         uppercase: 'Τ',
         lowercase: 'τ',
         name: 'Tau',
         pronunciation: '/taʊ/',
-        romanization: 'T, t'
+        romanization: 'T, t',
+        greekPronunciation: 'ταυ'
     },
     {
         uppercase: 'Υ',
         lowercase: 'υ',
         name: 'Upsilon',
         pronunciation: '/ˈʌpsɪlɒn/',
-        romanization: 'U, u'
+        romanization: 'U, u',
+        greekPronunciation: 'ύψιλον'
     },
     {
         uppercase: 'Φ',
         lowercase: 'φ',
         name: 'Phi',
         pronunciation: '/faɪ/',
-        romanization: 'Ph, ph'
+        romanization: 'Ph, ph',
+        greekPronunciation: 'φι'
     },
     {
         uppercase: 'Χ',
         lowercase: 'χ',
         name: 'Chi',
         pronunciation: '/kaɪ/',
-        romanization: 'Ch, ch'
+        romanization: 'Ch, ch',
+        greekPronunciation: 'χι'
     },
     {
         uppercase: 'Ψ',
         lowercase: 'ψ',
         name: 'Psi',
         pronunciation: '/saɪ/',
-        romanization: 'Ps, ps'
+        romanization: 'Ps, ps',
+        greekPronunciation: 'ψι'
     },
     {
         uppercase: 'Ω',
         lowercase: 'ω',
         name: 'Omega',
         pronunciation: '/oʊˈmeɪɡə/',
-        romanization: 'O, o'
+        romanization: 'O, o',
+        greekPronunciation: 'ωμέγα'
     }
 ];
 
@@ -192,13 +216,16 @@ const resetBtn = document.getElementById('resetBtn');
 const currentCard = document.getElementById('currentCard');
 const totalCards = document.getElementById('totalCards');
 const progressFill = document.getElementById('progressFill');
+const alphabetGrid = document.getElementById('alphabetGrid');
 
 // Initialize the application
 function init() {
     totalCards.textContent = greekAlphabet.length;
     updateCard();
     updateProgress();
+    createAlphabetGrid();
     addEventListeners();
+    initializeSpeechSynthesis();
 }
 
 // Add event listeners
@@ -464,6 +491,131 @@ function optimizePerformance() {
         clearTimeout(navigationTimeout);
         navigationTimeout = setTimeout(originalPrev, 50);
     };
+}
+
+// Speech synthesis functionality
+let speechSynth = null;
+let greekVoice = null;
+
+// Initialize speech synthesis with best Greek voice
+function initializeSpeechSynthesis() {
+    if ('speechSynthesis' in window) {
+        speechSynth = window.speechSynthesis;
+        
+        // Wait for voices to load
+        const setGreekVoice = () => {
+            const voices = speechSynth.getVoices();
+            // Look for Greek voices in order of preference
+            greekVoice = voices.find(voice => 
+                voice.lang === 'el-GR' || 
+                voice.lang === 'el' || 
+                voice.name.toLowerCase().includes('greek')
+            ) || voices.find(voice => 
+                voice.lang.startsWith('el')
+            ) || voices[0]; // Fallback to first available voice
+            
+            if (greekVoice) {
+                console.log('Using voice:', greekVoice.name, greekVoice.lang);
+            }
+        };
+        
+        if (speechSynth.getVoices().length === 0) {
+            speechSynth.addEventListener('voiceschanged', setGreekVoice);
+        } else {
+            setGreekVoice();
+        }
+    }
+}
+
+// Speak Greek letter pronunciation
+function speakGreekLetter(letter) {
+    if (!speechSynth || !greekVoice) {
+        showNotification('Speech synthesis not available');
+        return;
+    }
+    
+    // Cancel any ongoing speech
+    speechSynth.cancel();
+    
+    const utterance = new SpeechSynthesisUtterance(letter.greekPronunciation);
+    utterance.voice = greekVoice;
+    utterance.rate = 0.8; // Slightly slower for learning
+    utterance.pitch = 1.0;
+    utterance.volume = 1.0;
+    
+    // Set language to Greek if available
+    if (greekVoice.lang.startsWith('el')) {
+        utterance.lang = greekVoice.lang;
+    }
+    
+    speechSynth.speak(utterance);
+    
+    return utterance;
+}
+
+// Create the alphabet grid for pronunciation
+function createAlphabetGrid() {
+    alphabetGrid.innerHTML = '';
+    
+    greekAlphabet.forEach((letter, index) => {
+        const letterItem = document.createElement('div');
+        letterItem.className = 'letter-item';
+        letterItem.setAttribute('data-index', index);
+        letterItem.setAttribute('tabindex', '0');
+        letterItem.setAttribute('role', 'button');
+        letterItem.setAttribute('aria-label', `Pronounce ${letter.name}`);
+        
+        letterItem.innerHTML = `
+            <div class="letter-item-upper">${letter.uppercase}</div>
+            <div class="letter-item-lower">${letter.lowercase}</div>
+            <div class="letter-item-name">${letter.name}</div>
+        `;
+        
+        // Add click listener for pronunciation
+        letterItem.addEventListener('click', () => {
+            handleLetterPronunciation(index, letterItem);
+        });
+        
+        // Add keyboard support
+        letterItem.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                handleLetterPronunciation(index, letterItem);
+            }
+        });
+        
+        alphabetGrid.appendChild(letterItem);
+    });
+}
+
+// Handle letter pronunciation with visual feedback
+function handleLetterPronunciation(index, element) {
+    const letter = greekAlphabet[index];
+    
+    // Add visual feedback
+    element.classList.add('speaking');
+    
+    // Speak the letter
+    const utterance = speakGreekLetter(letter);
+    
+    if (utterance) {
+        utterance.addEventListener('end', () => {
+            element.classList.remove('speaking');
+        });
+        
+        utterance.addEventListener('error', () => {
+            element.classList.remove('speaking');
+            showNotification('Could not pronounce this letter');
+        });
+        
+        // Remove speaking class after timeout as fallback
+        setTimeout(() => {
+            element.classList.remove('speaking');
+        }, 3000);
+        
+        // Show notification with letter info
+        showNotification(`Playing: ${letter.name} (${letter.greekPronunciation})`);
+    }
 }
 
 // Initialize the application when the DOM is loaded
