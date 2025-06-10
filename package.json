@@ -11,7 +11,7 @@
     "generate-icons": "node scripts/generateIcons.js",
     "generate-favicon": "node scripts/generateFavicon.js",
     "setup": "npm run generate-icons && npm run generate-favicon",
-    "start": "vite"
+    "start": "npm run build && npm run serve"
   },
   "keywords": [],
   "author": "Greek Flashcards App",
