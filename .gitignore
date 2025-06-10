@@ -9,11 +9,11 @@ dist/
 build/
 
 # Generated assets (created by npm run setup)
-public/favicon.svg
-public/favicon.ico
-public/favicon-16.svg
-public/icon-192.png
-public/icon-512.png
+favicon.svg
+favicon.ico
+favicon-16.svg
+icon-192.png
+icon-512.png
 
 # Environment variables
 .env

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { writeFileSync } from 'fs';
+import { writeFileSync } from "fs";
 
 // Main favicon SVG (32x32)
 const faviconSVG = `<?xml version="1.0" encoding="UTF-8"?>
@@ -62,16 +62,16 @@ const favicon16SVG = `<?xml version="1.0" encoding="UTF-8"?>
 </svg>`;
 
 try {
-  // Write favicon files to public directory
-  writeFileSync('public/favicon.svg', faviconSVG);
-  writeFileSync('public/favicon-16.svg', favicon16SVG);
-  writeFileSync('public/favicon.ico', faviconSVG); // Modern browsers can handle SVG in .ico files
-  
-  console.log('✓ Generated public/favicon.svg');
-  console.log('✓ Generated public/favicon-16.svg');
-  console.log('✓ Generated public/favicon.ico');
-  console.log('Favicons generated successfully!');
+  // Write favicon files to root directory
+  writeFileSync("favicon.svg", faviconSVG);
+  writeFileSync("favicon-16.svg", favicon16SVG);
+  writeFileSync("favicon.ico", faviconSVG); // Modern browsers can handle SVG in .ico files
+
+  console.log("✓ Generated favicon.svg");
+  console.log("✓ Generated favicon-16.svg");
+  console.log("✓ Generated favicon.ico");
+  console.log("Favicons generated successfully!");
 } catch (error) {
-  console.error('Error generating favicons:', error);
+  console.error("Error generating favicons:", error);
   process.exit(1);
 }

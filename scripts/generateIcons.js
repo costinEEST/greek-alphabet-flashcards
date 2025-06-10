@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { writeFileSync } from 'fs';
+import { writeFileSync } from "fs";
 
 // SVG for 192x192 icon
 const icon192SVG = `<?xml version="1.0" encoding="UTF-8"?>
@@ -39,14 +39,14 @@ const icon512SVG = `<?xml version="1.0" encoding="UTF-8"?>
 </svg>`;
 
 try {
-  // Write icon files to public directory
-  writeFileSync('public/icon-192.png', icon192SVG);
-  writeFileSync('public/icon-512.png', icon512SVG);
-  
-  console.log('✓ Generated public/icon-192.png');
-  console.log('✓ Generated public/icon-512.png');
-  console.log('Icons generated successfully!');
+  // Write icon files to root directory
+  writeFileSync("icon-192.png", icon192SVG);
+  writeFileSync("icon-512.png", icon512SVG);
+
+  console.log("✓ Generated icon-192.png");
+  console.log("✓ Generated icon-512.png");
+  console.log("Icons generated successfully!");
 } catch (error) {
-  console.error('Error generating icons:', error);
+  console.error("Error generating icons:", error);
   process.exit(1);
 }
