@@ -1,0 +1,17 @@
+{
+  "name": "greek-alphabet-flashcards",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Greek Flashcards App",
+  "license": "MIT",
+  "description": "Learn the Greek alphabet with interactive flashcards and pronunciation. Progressive Web App with offline support.",
+  "dependencies": {
+    "vite": "^6.3.5",
+    "vite-plugin-pwa": "^1.0.0"
+  },
+  "type": "module"
+}

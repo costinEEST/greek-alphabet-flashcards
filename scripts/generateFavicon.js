@@ -1,5 +1,9 @@
-# Create favicon as SVG that browsers can use directly
-favicon_svg = '''<?xml version="1.0" encoding="UTF-8"?>
+#!/usr/bin/env node
+
+import { writeFileSync } from 'fs';
+
+// Main favicon SVG (32x32)
+const faviconSVG = `<?xml version="1.0" encoding="UTF-8"?>
 <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bookGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -29,10 +33,10 @@ favicon_svg = '''<?xml version="1.0" encoding="UTF-8"?>
   
   <!-- Book shadow -->
   <ellipse cx="16" cy="29" rx="12" ry="2" fill="rgba(0,0,0,0.1)"/>
-</svg>'''
+</svg>`;
 
-# Create 16x16 favicon
-favicon_16_svg = '''<?xml version="1.0" encoding="UTF-8"?>
+// 16x16 favicon SVG
+const favicon16SVG = `<?xml version="1.0" encoding="UTF-8"?>
 <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bookGradient16" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -55,17 +59,19 @@ favicon_16_svg = '''<?xml version="1.0" encoding="UTF-8"?>
   
   <!-- Omega on right -->
   <text x="11.5" y="9" text-anchor="middle" font-family="serif" font-size="5" font-weight="bold" fill="#667eea">Ω</text>
-</svg>'''
+</svg>`;
 
-# Write favicon files
-with open('favicon.svg', 'w') as f:
-    f.write(favicon_svg)
-
-with open('favicon-16.svg', 'w') as f:
-    f.write(favicon_16_svg)
-
-# Overwrite the previous favicon.ico with SVG content
-with open('favicon.ico', 'w') as f:
-    f.write(favicon_svg)
-
-print("Favicon files created successfully")
+try {
+  // Write favicon files
+  writeFileSync('favicon.svg', faviconSVG);
+  writeFileSync('favicon-16.svg', favicon16SVG);
+  writeFileSync('favicon.ico', faviconSVG); // Modern browsers can handle SVG in .ico files
+  
+  console.log('✓ Generated favicon.svg');
+  console.log('✓ Generated favicon-16.svg');
+  console.log('✓ Generated favicon.ico');
+  console.log('Favicons generated successfully!');
+} catch (error) {
+  console.error('Error generating favicons:', error);
+  process.exit(1);
+}

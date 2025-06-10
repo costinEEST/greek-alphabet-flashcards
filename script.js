@@ -648,29 +648,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1000);
 });
 
-// Register service worker for PWA functionality
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', async () => {
-        try {
-            const registration = await navigator.serviceWorker.register('/sw.js');
-            console.log('Service Worker registered successfully:', registration.scope);
-            
-            // Check for updates
-            registration.addEventListener('updatefound', () => {
-                const newWorker = registration.installing;
-                newWorker.addEventListener('statechange', () => {
-                    if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                        showNotification('App updated! Refresh to see changes.');
-                    }
-                });
-            });
-        } catch (error) {
-            console.log('Service Worker registration failed:', error);
-        }
-        
-        console.log('Greek Alphabet Flashcards loaded successfully!');
-    });
-}
+// PWA functionality is now handled by Vite PWA plugin
+// The service worker will be automatically registered
 
 // PWA Install prompt
 let deferredPrompt;
