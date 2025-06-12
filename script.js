@@ -617,12 +617,15 @@ function createAlphabetGrid() {
     letterItem.setAttribute("data-index", index);
     letterItem.setAttribute("tabindex", "0");
     letterItem.setAttribute("role", "button");
-    letterItem.setAttribute("aria-label", `Pronounce ${letter.name}`);
+    letterItem.setAttribute(
+      "aria-label",
+      `Pronounce ${letter.greekPronunciation}`
+    );
 
     letterItem.innerHTML = `
           <div class="letter-item-upper">${letter.uppercase}</div>
           <div class="letter-item-lower">${letter.lowercase}</div>
-          <div class="letter-item-name">${letter.name}</div>
+          <div class="letter-item-name">${letter.greekPronunciation}</div>
       `;
 
     // Add click listener for pronunciation
